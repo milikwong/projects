@@ -1,0 +1,420 @@
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+
+/* Import fonts */
+/* @font-face {
+  font-family: HK Grotesk;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
+    format("opentype");
+}
+@font-face {
+  font-family: HK Grotesk;
+  font-weight: bold;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
+    format("opentype");
+} */
+
+html {
+  background-color: ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-decoration: none;
+  display: inline-block;
+  height: ;
+}
+
+/* -------- this is where you can add styling for everything inside of the <body> tags ------------ */
+
+iframe {
+  max-width: 100%; /* Use 100% to make the image adapt to the container's width */
+  height: auto; /* Maintain the aspect ratio */
+  display: block; /* Remove any extra white space below the image */
+  margin: 0 auto; /* Center horizontally */
+}
+
+embed {
+  max-width: 100%; /* Use 100% to make the image adapt to the container's width */
+  height: auto; /* Maintain the aspect ratio */
+  display: block; /* Remove any extra white space below the image */
+  margin: 0 auto; /* Center horizontally */
+}
+
+img {
+  max-width: 100%; /* Use 100% to make the image adapt to the container's width */
+  height: auto; /* Maintain the aspect ratio */
+  display: block; /* Remove any extra white space below the image */
+  margin: 0 auto; /* Center horizontally */
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: ; /* Your background color here */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto; /* Center horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  padding-top: 50px; /* Adjusted to accommodate the fixed navbar */
+}
+
+/* ------------- This is where you style links ----------------- */
+a:link {
+  color: #08415c;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #08415c;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: ;
+}
+
+a:active {
+  color: #5b7c99;
+  background-color: transparent;
+  text-decoration: ;
+}
+
+.disabled-link {
+  color: black; /* Change color to a muted or gray tone */
+  pointer-events: none; /* Disable mouse events */
+  cursor: not-allowed; /* Change cursor style */
+  text-decoration: none; /* Remove underline */
+}
+/* ------------- other stuff --------------- */
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.weeks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: ;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+/* ------------- navbar styling --------------- */
+
+.navbar {
+  overflow: hidden;
+  position: fixed; /* Make the navbar fixed at the top */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Set a high z-index to ensure it appears above other elements */
+  background-color: white;
+  border-bottom: 0.5px solid #08415c; /* Add a white border (adjust as needed) */
+  padding: 14px 16px;
+  font-size: px;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #5ec2f1;
+}
+
+.navbar2 {
+  float: right;
+  text-align: center;
+}
+
+footer {
+  opacity: 70%;
+  color: #08415c;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
+  padding: px;
+  font-size: 12px;
+}
+
+.container {
+  max-width: 816px; /* Set the maximum width of the content container */
+  height: 100%;
+  margin: 0 auto; /* Center the content container */
+  padding: 0px; /* Add padding to the content container */
+}
+
+/* ------------- back to top button --------------- */
+
+.back-to-top {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 4rem;
+  border-radius: 100%;
+  background: #08415c;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  opacity: 100%;
+  transition: opacity 0.5s;
+  z-index: 1000; /* Set a high z-index to ensure it appears above other elements */
+}
+
+.back-to-top:hover {
+  opacity: 60%;
+}
+
+.hidden {
+  opacity: 0%;
+}
+
+.back-to-top-icon {
+  width: 2rem;
+  height: 1.8rem;
+  color: #ffffff;
+}
+
+/* ----------- previous and next button -------------- */
+
+.previous,
+.previous:link,
+.previous:visited {
+  background-color: #08415c;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 20px;
+}
+
+.previous:hover {
+  background-color: white;
+  opacity: ;
+  color: red;
+}
+
+.next,
+.next:link,
+.next:visited {
+  background-color: #08415c;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 20px;
+}
+
+.next:hover {
+  background-color: white;
+  opacity: ;
+  color: red;
+}
+/*
+.round {
+  border-radius: 80%;
+}
+
+*/
+
+ {
+  box-sizing: border-box;
+}
+
+/* ---------------- Slideshow container ------------------- */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Position the arrows on the sides */
+.prev,
+.nex {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px; /* Adjust this value to vertically center the arrows */
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the previous arrow on the left side */
+.prev {
+  left: 0;
+}
+
+/* Position the next arrow on the right side */
+.nex {
+  right: 0;
+}
+
+/* Hover effect on arrows */
+.prev:hover,
+.nex:hover {
+  background-color: #08415c;
+  color: white;
+  border-radius: 20px;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #e3e3e3;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+}
+
+.active {
+  background-color: #08415c;
+}
+
+/*
+.dot:hover {
+  background-color: #08415c;
+} */
+
+.no-pointer-events {
+  pointer-events: none;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------------- scroll container ------------------- */
+div.scroll-container {
+  margin: 0 auto; /* Center horizontally */
+  background-color: ;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0px;
+  width: 100%;
+  max-width: 600px;
+  height: 494.64px;
+}
+
+div.scroll-container img {
+  display: inline; /* Display the images horizontally */
+  padding: 10px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* ----------- This is where you add css styles for mobile ------------------ */
+
+@media only screen and (max-width: 800px) {
+  iframe {
+    display: block; /* Remove any extra white space below the image */
+    margin: 0 auto; /* Center horizontally */
+    height: auto;
+    max-width: 100%;
+  }
+
+  embed {
+    max-width: 100%;
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Remove any extra white space below the image */
+    margin: 0 auto; /* Center horizontally */
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0px;
+  }
+}
