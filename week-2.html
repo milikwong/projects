@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 
+      This is an HTML comment
+      You can write text in a comment and the content won't be visible in the page
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--     <link rel="icon" href="https://glitch.com/favicon.ico" />
+ -->
+    <!--
+      This is the page head - it contains info the browser uses
+      Like the title, which appears on the browser tab but not inside the page
+      Further down you'll see the content that displays in the page
+    -->
+    <title>Michelle Kwong | Week 2</title>
+    <style>
+      body {
+        background: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <link
+      rel="icon"
+      href="https://cdn.glitch.global/3d4a2967-fbf6-48cb-bfec-d1eaed575487/milikwong.png?v=1699327981439"
+      type="image/x-icon"
+    />
+  </head>
+
+  <div class="navbar">
+    <a href="./index.html"><b>MICHELLE KWONG</b></a>
+    <div class="navbar2">
+      <a href="#" class="disabled-link">SPRING 2024</a>
+    </div>
+  </div>
+
+  <body>
+    <div class="container">
+      <div class="weeks">
+        <h2>Week 2</h2>
+
+        <div class="navigation">
+          <a href="./week-1.html" class="previous">&laquo; Previous</a>
+          <!-- these are spaces -->
+          &nbsp; &nbsp;
+          <a href="./index.html" class="next">Next &raquo;</a>
+        </div>
+      </div>
+      <!-- <a href="#" class="previous round">&#8249;</a>
+      <a href="#" class="next round">&#8250;</a>
+-->
+
+      <div align="left">
+        <body>
+          <h3>January 22 – January 28, 2024</h3>
+
+          <br />
+
+          <h5>
+            <a
+              href="https://docs.google.com/presentation/d/1VBjuZGiD4OSNTE5Jo90QtcPuQqMoq8HS2dmmDMbekGU/embed?start=false&loop=false&delayms=3000"
+              target="_blank"
+              >Presentation ⬇️ (detailed)</a
+            >
+          </h5>
+          <iframe
+            src="https://docs.google.com/presentation/d/1VBjuZGiD4OSNTE5Jo90QtcPuQqMoq8HS2dmmDMbekGU/embed?start=false&loop=false&delayms=3000"
+            frameborder="0"
+            style="width: 1280px; height: 500px"
+            allowfullscreen="true"
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+          ></iframe>
+          <br />
+          <p>Detailed version for advisors.</p>
+
+          <br />
+          <br />
+          <h5>
+            <a
+              href="https://docs.google.com/presentation/d/1lEMR3nWSHsUpJ3EmmkXwWzLp8KWmU4cmv27cUui7T_Y/embed?start=false&loop=false&delayms=3000"
+              target="_blank"
+              >Presentation ⬇️ (short)</a
+            >
+          </h5>
+          <iframe
+            src="https://docs.google.com/presentation/d/1lEMR3nWSHsUpJ3EmmkXwWzLp8KWmU4cmv27cUui7T_Y/embed?start=false&loop=false&delayms=3000"
+            frameborder="0"
+            style="width: 1280px; height: 500px"
+            allowfullscreen="true"
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+          ></iframe>
+          <br />
+          <p>Short version to present in class.</p>
+
+          <br />
+          <br />
+          <br />
+        </body>
+      </div>
+    </div>
+    <button class="back-to-top hidden">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="back-to-top-icon"
+        fill="none"
+        viewbox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M7 11l5-5m0 0l5 5m-5-5v12"
+        />
+      </svg>
+    </button>
+    <br />
+    <!-- Copyright Footer -->
+    <footer>
+      <p>&copy; 2024 Michelle Kwong. All Rights Reserved.</p>
+    </footer>
+  </body>
+  <!-- The website JavaScript file -->
+  <script src="script.js"></script>
+  <script>
+      let currentImageIndex = 0;
+      const images = ["image1.jpg", "image2.jpg", "image3.jpg"];
+
+      function openPopup(imageSrc) {
+        currentImageIndex = images.indexOf(imageSrc);
+        const popup = document.getElementById("image-popup");
+        const popupImage = document.getElementById("popup-image");
+        const navNum = document.getElementById("nav-num");
+
+        popupImage.src = imageSrc;
+        navNum.textContent = `${currentImageIndex + 1} / ${images.length}`;
+        popup.style.display = "flex";
+      }
+
+      function closePopup() {
+        const popup = document.getElementById("image-popup");
+        popup.style.display = "none";
+      }
+
+      function navigateImages(direction) {
+        currentImageIndex += direction;
+        if (currentImageIndex < 0) {
+          currentImageIndex = images.length - 1;
+        } else if (currentImageIndex >= images.length) {
+          currentImageIndex = 0;
+        }
+
+        const popupImage = document.getElementById("popup-image");
+        const navNum = document.getElementById("nav-num");
+
+        popupImage.src = images[currentImageIndex];
+        navNum.textContent = `${currentImageIndex + 1} / ${images.length}`;
+      }
+
+    <!-- The website JavaScript file -->
+    <script src="script.js">
+  </script>
+  <script>
+    document.addEventListener("contextmenu", (event) => event.preventDefault());
+
+    document.addEventListener("keydown", (event) => {
+      if (
+        event.keyCode === 123 ||
+        (event.ctrlKey && event.shiftKey && event.keyCode === 73)
+      ) {
+        event.preventDefault();
+      }
+    });
+  </script>
+</html>
