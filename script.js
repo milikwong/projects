@@ -97,7 +97,6 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
 }
 
-
 document.addEventListener("contextmenu", (event) => event.preventDefault());
 
 
@@ -109,7 +108,6 @@ document.addEventListener("keydown", (event) => {
     event.preventDefault();
   }
 });
-
 
 document.addEventListener("keydown", function (event) {
 
