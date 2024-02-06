@@ -63,6 +63,69 @@ body {
   padding-top: 50px; /* Adjusted to accommodate the fixed navbar */
 }
 
+/**
+Each tile's image height is known in advance.  at archive.org we use backend (PHP) to fetch that height and then simply have to run a formula like this for picking which 'htX' class to use:
+  'ht' . min(7, floor($imgHT / 40));
+
+We assume 20px gutters, and we _also_ split our grid into 20px high row increments (minimum here is 2 row spans per tile).
+
+So,
+a 'row span' of 2 is  60px high,
+a 'row span' of 3 is 100px high, etc.
+ */
+.results {
+   /* fit in up to 5 columns of 180px wide tiles, 20px gutters: 5*180 + 4*20: */
+  max-width:;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 20px;
+  /* fit as many columns as possible, 180px wide each: */
+  grid-template-columns: repeat(auto-fill, 180px);
+  /* each row is 20px high -- we always span 2+ */
+  grid-auto-rows: minmax(20px, auto);
+  justify-content: center;	
+}
+
+.results > * {
+  width: 180px;
+  /* only for older non-grid browsers: */
+  float: left;  
+  /* only for older non-grid browsers: */
+  margin: 15px;
+}
+
+.ht0 { grid-row-end: span 2; }
+.ht1 { grid-row-end: span 3; }
+.ht2 { grid-row-end: span 4; }
+.ht3 { grid-row-end: span 5; }
+.ht4 { grid-row-end: span 6; }
+.ht5 { grid-row-end: span 7; }
+.ht6 { grid-row-end: span 8; }
+.ht7 { grid-row-end: span 9; }
+
+@supports (display: grid) {
+  .results > * {
+    /* modern browser -- grid-gap takes care of us: */
+    margin: 0 auto;
+  }
+}
+
+/* cosmetics only from here on down */
+.results > * {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+}
+.results > * img {
+  max-width: 100%;
+}
+.results > * span {
+  font-size: 125%;
+  color: #cc3333;
+}
+
 /* ------------- This is where you style links ----------------- */
 a:link {
   color: #08415c;
@@ -101,6 +164,12 @@ a:active {
   float: left;
   width: 50%;
   padding: 10px;
+  filter: /*grayscale(100%); */
+  transition: filter 2s;
+}
+
+.column:hover {
+  filter: none;
 }
 
 /* Clear floats after the columns */
@@ -380,6 +449,28 @@ div.scroll-container img {
   max-height: 100%;
 }
 
+#gallery {
+  line-height: 0;
+  -webkit-column-count: 2; /* split it into 2 columns */
+  -webkit-column-gap: 2px; /* give it a 5px gap between columns */
+  -moz-column-count: 2;
+  -moz-column-gap: 2px;
+  column-count: 2;
+  column-gap: 2px;
+}
+
+#gallery img {
+  width: 100% !important;
+  height: auto !important;
+  margin-bottom: 5px; /* to match column gap */
+  filter: grayscale(100%);
+  transition: filter 2s;
+}
+
+#gallery img:hover {
+  filter: none;
+}
+
 /* ----------- This is where you add css styles for mobile ------------------ */
 
 @media only screen and (max-width: 800px) {
@@ -416,5 +507,37 @@ div.scroll-container img {
     right: 0;
     text-align: center;
     padding: 0px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #gallery {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media (max-width: 1000px) {
+  #gallery {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media (max-width: 800px) {
+  #gallery {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media (max-width: 400px) {
+  #gallery {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
   }
 }
